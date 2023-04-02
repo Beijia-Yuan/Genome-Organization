@@ -1,0 +1,42 @@
+Sender: LSF System <lsfadmin@lsf-server-2.rostclust>
+Subject: Job 33674: <tang_b_test> in cluster <rost_lsf_cluster_1> Done
+
+Job <tang_b_test> was submitted from host <lsf-master-1.rostclust> by user <tang> in cluster <rost_lsf_cluster_1> at Sun Apr  2 13:32:48 2023
+Job was executed on host(s) <lsf-server-2.rostclust>, in queue <mid-end-normal>, as user <tang> in cluster <rost_lsf_cluster_1> at Sun Apr  2 13:32:48 2023
+</mnt/home/tang> was used as the home directory.
+</mnt/home/tang/b_test/Genome-Organization> was used as the working directory.
+Started at Sun Apr  2 13:32:48 2023
+Terminated at Sun Apr  2 13:33:07 2023
+Results reported at Sun Apr  2 13:33:07 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+python Genome_Organization_new_\(1\).py
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   17.62 sec.
+    Max Memory :                                 151 MB
+    Average Memory :                             95.20 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                130
+    Run time :                                   18 sec.
+    Turnaround time :                            19 sec.
+
+The output (if any) follows:
+
+0.9338538085126518 0.00034116408283996875
+
+
+PS:
+
+Read file <stderr.log> for stderr output of this job.
+

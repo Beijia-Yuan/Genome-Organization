@@ -105,31 +105,6 @@ def generate_step_1D(steps):
         steps.append(steps[-1]+np.array((-1)))
 
 
-# In[231]:
-
-
-m = 100
-distribution = {}
-for i in tqdm(range(100000)):
-    steps = [np.array((0,0,0))]
-    for j in range(m):
-        generate_step(steps)
-    a = steps[30]
-    b = steps[50]-steps[30]
-    c = steps[99]-steps[50]
-    Imme = []
-    for j in range(30):
-        sj = steps[j+1]-steps[j]
-        for k in range(j+1,30):
-            sk = steps[k+1]-steps[k]
-            Imme.append(dot_prod(sj,sk))
-    x = tuple(a+b)
-    y = tuple(b+c)
-    if (x,y) in distribution:
-        distribution[(x,y)] += Imme
-    else:
-        distribution[(x,y)] = Imme
-
 
 # In[ ]:
 
@@ -149,8 +124,8 @@ for i in range(10000):
         for k in range(j+1,30):
             sk = steps[k+1]-steps[k]
             Imme.append(dot_prod(sj,sk))
-    x = tuple(a+b)
-    y = tuple(b+c)
+    x = (a+b)
+    y = (b+c)
     if (x,y) in distribution:
         distribution[(x,y)] += Imme
     else:
@@ -162,7 +137,7 @@ for i in range(10000):
 
 stat = {}
 for eed in distribution:
-    if len(distribution[eed]) > 5*(30+1)*30/2:
+    if len(distribution[eed]) > 10*(30+1)*30/2:
         stat[eed] = np.mean(distribution[eed])
 
 

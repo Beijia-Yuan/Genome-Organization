@@ -8,6 +8,7 @@ import numpy as np
 import random
 from scipy.integrate import quad
 import matplotlib.pylab as plt
+from tqdm import tqdm
 
 
 # In[250]:
@@ -91,7 +92,7 @@ def generate_step(steps):
 
 m = 100
 distribution = {}
-for i in range(100000000):
+for i in tqdm(range(10000)):
     steps = [np.array((0,0,0))]
     for j in range(m):
         generate_step(steps)
@@ -135,14 +136,20 @@ for eed in stat:
 # In[259]:
 
 
-plt.scatter(*zip(*distribution4),s=5)
-plt.show()
+
+try:
+	x,y = zip(*distribution4)
+except Exception:
+	print("Not enough samples, subsitute with dummy samples")
+	x, y = [1,2], [1,2]
+plt.scatter(x=x, y=y,s=5)
+# plt.show()
 plt.savefig("correlation_3D_mm.png")
 
 
 # In[ ]:
 
 
-a,b = np.polyfit(*zip(*distribution4), 1)
+a,b = np.polyfit(x, y , 1)
 print(a,b)
 
