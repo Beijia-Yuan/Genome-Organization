@@ -92,7 +92,7 @@ def generate_step(steps):
 
 m = 100
 distribution = {}
-for i in tqdm(range(10000)):
+for i in tqdm(range(100_000_000)):
     steps = [np.array((0,0,0))]
     for j in range(m):
         generate_step(steps)
@@ -126,22 +126,23 @@ for eed in distribution:
 
 
 distribution4 = []
-for eed in stat:
-    x = eed[0]; y = eed[1]
-    A, ld = A_ld(30,20,50,x,y)
-    mm = pair_correlation(30,20,50,x,y)[0]
-    distribution4.append((stat[eed], mm))
+with open("distribution4.csv", "w") as w:
+    for eed in stat:
+        x = eed[0]; y = eed[1]
+        A, ld = A_ld(30,20,50,x,y)
+        mm = pair_correlation(30,20,50,x,y)[0]
+        distribution4.append((stat[eed], mm))
+        w.write(str(stat[eed]) + "," + str(mm) + "\n")
 
 
 # In[259]:
 
 
-
 try:
-	x,y = zip(*distribution4)
+    x,y = zip(*distribution4)
 except Exception:
-	print("Not enough samples, subsitute with dummy samples")
-	x, y = [1,2], [1,2]
+    print("Not enough samples, subsitute with dummy samples")
+    x, y = [1,2], [1,2]
 plt.scatter(x=x, y=y,s=5)
 # plt.show()
 plt.savefig("correlation_3D_mm.png")
