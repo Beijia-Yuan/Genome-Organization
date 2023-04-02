@@ -1,13 +1,13 @@
 Sender: LSF System <lsfadmin@lsf-server-2.rostclust>
-Subject: Job 33677: <tang_b_test> in cluster <rost_lsf_cluster_1> Exited
+Subject: Job 33678: <tang_b_test> in cluster <rost_lsf_cluster_1> Exited
 
-Job <tang_b_test> was submitted from host <lsf-master-1.rostclust> by user <tang> in cluster <rost_lsf_cluster_1> at Sun Apr  2 13:56:34 2023
-Job was executed on host(s) <lsf-server-2.rostclust>, in queue <mid-end-normal>, as user <tang> in cluster <rost_lsf_cluster_1> at Sun Apr  2 13:56:34 2023
+Job <tang_b_test> was submitted from host <lsf-master-1.rostclust> by user <tang> in cluster <rost_lsf_cluster_1> at Sun Apr  2 13:57:53 2023
+Job was executed on host(s) <lsf-server-2.rostclust>, in queue <mid-end-normal>, as user <tang> in cluster <rost_lsf_cluster_1> at Sun Apr  2 13:57:53 2023
 </mnt/home/tang> was used as the home directory.
 </mnt/home/tang/b_test/Genome-Organization> was used as the working directory.
-Started at Sun Apr  2 13:56:34 2023
-Terminated at Sun Apr  2 13:57:23 2023
-Results reported at Sun Apr  2 13:57:23 2023
+Started at Sun Apr  2 13:57:53 2023
+Terminated at Sun Apr  2 14:29:29 2023
+Results reported at Sun Apr  2 14:29:29 2023
 
 Your job looked like:
 
@@ -17,20 +17,20 @@ python Genome_Organization_new.py
 ------------------------------------------------------------
 
 TERM_OWNER: job killed by owner.
-Exited with exit code 130.
+Exited with exit code 143.
 
 Resource usage summary:
 
-    CPU time :                                   53.68 sec.
-    Max Memory :                                 608 MB
-    Average Memory :                             357.89 MB
+    CPU time :                                   1903.35 sec.
+    Max Memory :                                 27177 MB
+    Average Memory :                             13786.96 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              3
     Max Threads :                                131
-    Run time :                                   48 sec.
-    Turnaround time :                            49 sec.
+    Run time :                                   1895 sec.
+    Turnaround time :                            1896 sec.
 
 The output (if any) follows:
 

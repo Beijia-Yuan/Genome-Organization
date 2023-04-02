@@ -8,7 +8,7 @@ limit:
     # in hh:mm
     runtimeLimit: 2400:00
     # Limit the execution to 8GB of CPU RAM
-    memLimit: 32G!
+    memLimit: 64G!
 resource: 
     # GPU options
     # shared job up to 43GB of GPU RAM
