@@ -132,7 +132,7 @@ with open("distribution4.csv", "w") as w:
         A, ld = A_ld(30,20,50,x,y)
         mm = pair_correlation(30,20,50,x,y)[0]
         distribution4.append((stat[eed], mm))
-        w.write(str(stat[eed]) + "," + str(mm) + "\n")
+        w.write(str(x) + "," str(y) + "," + str(stat[eed]) + "," + str(mm) + "\n")
 
 
 # In[259]:
