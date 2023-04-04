@@ -88,24 +88,25 @@ def generate_step(steps):
 
 
 def generateData(distribution):
-    steps = [np.array((0,0,0))]
-    for j in range(1000):
-        generate_step(steps)
-    a = steps[300]
-    b = steps[500]-steps[300]
-    c = steps[1000]-steps[500]
-    Imme = []
-    for j in range(300):
-        sj = steps[j+1]-steps[j]
-        for k in range(j+1,300):
-            sk = steps[k+1]-steps[k]
-            Imme.append(dot_prod(sj,sk))
-    x = tuple(a+b)
-    y = tuple(b+c)
-    if (x,y) in distribution:
-        distribution[(x,y)].append(np.mean(Imme))
-    else:
-        distribution[(x,y)] = [np.mean(Imme)]
+    for i in range(30_000_000):
+        steps = [np.array((0,0,0))]
+        for j in range(1000):
+            generate_step(steps)
+        a = steps[300]
+        b = steps[500]-steps[300]
+        c = steps[1000]-steps[500]
+        Imme = []
+        for j in range(300):
+            sj = steps[j+1]-steps[j]
+            for k in range(j+1,300):
+                sk = steps[k+1]-steps[k]
+                Imme.append(dot_prod(sj,sk))
+        x = tuple(a+b)
+        y = tuple(b+c)
+        if (x,y) in distribution:
+            distribution[(x,y)].append(np.mean(Imme))
+        else:
+            distribution[(x,y)] = [np.mean(Imme)]
 
 
 # In[231]:
@@ -113,7 +114,7 @@ def generateData(distribution):
 
 distribution = {}
 if __name__=='__main__':
-    processes = [Process(target = generateData, args = (distribution,)) for i in tqdm(range(100000000))]
+    processes = [Process(target = generateData, args = (distribution,)) for i in tqdm(range(16))]
     for process in tqdm(processes):
         process.start()
     for process in tqdm(processes):
