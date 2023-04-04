@@ -119,7 +119,7 @@ def new_fun(d):
 with mp.Manager() as manager:
     distribution = manager.dict()
     with manager.Pool(initializer=init_pool_processes) as pool:
-        list(tqdm(pool.imap_unordered(generateData, repeat(distribution,50_000_000))))
+        list(tqdm(pool.imap_unordered(generateData, repeat(distribution,10_000_000))))
     stat = {}
     for eed in distribution:
         if len(distribution[eed]) > 10:
