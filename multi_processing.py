@@ -142,8 +142,8 @@ with mp.Manager() as manager:
     with open("distribution4.csv", "w") as w:
         for eed in stat:
             x = eed[0]; y = eed[1]
-            A, ld = A_ld(30,20,50,x,y)
-            mm = pair_correlation(30,20,50,x,y)[0]
+            A, ld = A_ld(300,200,500,x,y)
+            mm = pair_correlation(300,200,500,x,y)[0]
             distribution4.append((stat[eed], mm))
             w.write(str(x) + "," + str(y) + "," + str(stat[eed]) + "," + str(mm) + "\n")
 
