@@ -124,7 +124,7 @@ with mp.Manager() as manager:
     import numpy as np
     distribution = manager.dict()
     with manager.Pool(16) as pool:
-        tqdm(pool.map(generateData, repeat(distribution, 50_000_000)))
+        tqdm(pool.imap_unordered(generateData, repeat(distribution, 1_000)))
 
 # In[232]:
 
