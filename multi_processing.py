@@ -88,7 +88,7 @@ def generate_step(steps):
 
 
 def generateData(distribution):
-    for i in range(30_000_000):
+    for i in range(3_000_000):
         steps = [np.array((0,0,0))]
         for j in range(1000):
             generate_step(steps)
